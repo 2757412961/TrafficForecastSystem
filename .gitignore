@@ -1,0 +1,8 @@
+traffic_forecast/.idea/*
+traffic_forecast/.idea
+.DS_Store
+*.DS_Store
+*.DS_store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
