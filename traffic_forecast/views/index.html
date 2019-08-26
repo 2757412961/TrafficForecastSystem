@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Traffic Forecast System</title>
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta http-equiv="Access-Control-Allow-Methods" content="POST, GET, OPTIONS, DELETE, PUT">
+    <meta http-equiv="Access-Control-Allow-Headers" charset="Test">
+    <!--style sheet-->
+    <link href="/stylesheets/style.css" rel="stylesheet" type="text/css" />
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.css' rel='stylesheet' />
+    <link href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.css' rel='stylesheet' type='text/css' />
+    <link href="/stylesheets/jquery-labelauty.css" rel="stylesheet" />
+</head>
+<body>
+
+<div id='map_container'></div>
+<div class='control_panel'>
+    <label>Traffic Status</label>
+    <ul class="selections">
+        <li><input type="radio" name="typeSel" checked="checked" data-labelauty="Real-Time" id="real-time"></li>
+        <li><input type="radio" name="typeSel" data-labelauty="Forecast" id="forecast"></li>
+    </ul>
+    <hr>
+    <div id="forecast_panel">
+        <ul>
+            <li><a href="#" id="week0" class="week">Sun</a></li>
+            <li><a href="#" id="week1" class="week">Mon</a></li>
+            <li><a href="#" id="week2" class="week">Tue</a></li>
+            <li><a href="#" id="week3" class="week">Wed</a></li>
+            <li><a href="#" id="week4" class="week">Thu</a></li>
+            <li><a href="#" id="week5" class="week">Fri</a></li>
+            <li><a href="#" id="week6" class="week">Sat</a></li>
+        </ul>
+        0<input type="range" name="slide" min="0" max="24" step="1" id="time_list" list="tickmarks" value="8"/>24
+        <datalist id="tickmarks">
+            <option value="0">
+            <option value="2">
+            <option value="4">
+            <option value="6">
+            <option value="8">
+            <option value="10">
+            <option value="12">
+            <option value="14">
+            <option value="16">
+            <option value="18">
+            <option value="20">
+            <option value="22">
+            <option value="24">
+        </datalist>
+    </div>
+    <label id="time_label">Time On Map: 8:00</label>
+</div>
+
+<div id="menu_panel">
+    <ul class="map_selections">
+        <li><input type="radio" name="mapSel" checked="checked" data-labelauty="Streets" id="streets-v11"></li>
+        <li><input type="radio" name="mapSel" data-labelauty="Light" id="light-v10"></li>
+        <li><input type="radio" name="mapSel" data-labelauty="Dark" id="dark-v10"></li>
+        <li><input type="radio" name="mapSel" data-labelauty="Outdoors" id="outdoors-v11"></li>
+        <li><input type="radio" name="mapSel" data-labelauty="Satellite" id="satellite-v9"></li>
+    </ul>
+</div>
+
+<!--javascript-->
+<!--local plugin-->
+<script src="/javascripts/jquery-3.4.1.js"></script>
+<script src="/javascripts/jquery-labelauty.js"></script>
+<!--online plugin-->
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js'></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.min.js'></script>
+<!--preload-->
+<script src="/javascripts/preload/time_function.js"></script>
+<!--local dispose-->
+<script src="/javascripts/base_map.js"></script>
+<script src="/javascripts/time_dispose.js"></script>
+
+</body>
+</html>
